@@ -1,0 +1,159 @@
+﻿body {
+	font-family: "Segoe UI", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	text-align: center;
+	padding: 0px;
+	margin: 0px;
+	background-color: #000000;
+}
+
+div.frame {
+
+	width: 100%;
+	height: 100%;
+	
+	float: left;
+	
+	overflow: hidden;
+}
+
+div.timeFrame {
+
+	width: 8%;
+	height: 100%;
+	
+	float: left;
+	display: inline-block;
+	
+}
+
+div.daysFrame {
+
+	width: 92%;
+	height: 100%;
+	
+	float: left;
+	display: inline-block;
+	
+}
+
+div.day {
+
+	height: 100%;
+	
+	float: left;
+	display: inline-block;
+	
+}
+
+div.dayHeader {
+
+	width: 48%;
+	
+	border-radius: 0 0 12px 12px;
+	
+	font-weight: bold;
+	
+	background: #ff0000;
+    background: linear-gradient(to top, #ff0000, #ffaa00);
+	
+	transition: 0.2s ease-in-out;
+	-webkit-transition: 0.2s ease-in-out;
+	
+	cursor: default;
+	
+	margin-top: 0;
+	margin-bottom: 0;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+div.dayHeader:hover {
+	
+	transform: scale(1.12);
+	-webkit-transform: scale(1.12);
+	
+}
+
+div.course {
+	
+	width: 92%;
+	height: 0px;
+	
+	position: relative;
+	
+	border-radius: 4px;
+	
+	transition: transform 0.2s ease-in-out;
+	-webkit-transition: 0.2s ease-in-out;
+	
+	cursor: pointer;
+	
+	margin-top: 0;
+	margin-bottom: 0;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+div.course:hover {
+	
+	transform: scale(1.12);
+	-webkit-transform: scale(1.12);
+	
+}
+
+div.timeLine {
+	
+	width: 80%;
+	height: 100%;
+	
+	position: relative;
+	
+	border-radius: 0 40% 40% 0;
+	
+	background: #ff0000;
+    background: linear-gradient(to right, #ff0000, #ff7700);
+	
+	margin: 0;
+	padding: 0;
+	
+	float: left;
+}
+
+div.timeValueContainer {
+	
+	width: 64%;
+	
+	position: relative;
+	
+	float: left;
+	display: inline-block;
+	
+}
+
+div.timeValueMarker {
+	
+	height: 2.4px;
+	
+	border-radius: 0 50% 50% 0;
+	
+	background: #000000;
+    background: linear-gradient(to bottom, #000000, #ff0000);
+	
+}
+
+div.timeValue {
+	font-weight: bold;
+
+	transition: transform 0.2s ease-in-out;
+	-webkit-transition: 0.2s ease-in-out;
+	
+	cursor: default;
+	
+}
+
+div.timeValue:hover {
+	
+	transform: scale(1.28);
+	-webkit-transform: scale(1.28);
+	
+}
