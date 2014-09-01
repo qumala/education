@@ -1,86 +1,59 @@
-﻿var Course = new Object();
+Course = new Object();
 
-Course.NONE		= 0;
-Course.LECTURE 	= 1;
-Course.SEMINAR	= 2;
-Course.ASSIGN	= 3;
-Course.LABWORK	= 4;
-Course.TEST		= 5;
-Course.EXAM		= 6;
-Course.GYM		= 7;
+ACTIVE_MASK = 0x1;
+ACTIVE      = 0x0;
+INACTIVE    = 0x1;
 
-Course.PAIR1 = 9*60 	+ 0;
-Course.PAIR2 = 10*60 	+ 45;
-Course.PAIR3 = 12*60 	+ 30;
-Course.PAIR4 = 14*60 	+ 15;
-Course.PAIR5 = 16*60 	+ 0;
-Course.PAIR6 = 17*60 	+ 45;
+TYPE_MASK = 0x6;
+LECTURE   = 0x0;
+SEMINAR   = 0x2;
+PRACTICE  = 0x4;
 
-Course.ONE_PAIR 	= 95;
-Course.TWO_PAIRS 	= 200;
-Course.HALF_PAIR 	= 45;
+KIND_MASK = 0x18;
+COMMON    = 0x0;
+SPECIAL   = 0x8;
+LIBERAL   = 0x10;
 
-Course.create = function (begin, length, type, subject, auditory, teacher) {
-
-	var obj = new Object();
+Course.create = function (start,length,type,name,place,teacher)
+{
+	var course = new Object();
 	
-	obj.div = document.createElement('div');
-	obj.div.className = 'course';
-
-	obj.div.innerHTML += "<b>" + subject.name + "</b>";
-	if( auditory != undefined && auditory != Location.UNDEFINED) {
-		obj.div.innerHTML += "<br>" + auditory.name;
-	}
-	if( teacher != undefined) {
-		obj.div.innerHTML += "<br>" + teacher.name;
-	}
+	course.start   = start;
+	course.length  = length;
+	course.type    = type;
+	course.name    = name;
+	course.place   = place;
+	course.teacher = teacher;
 	
-	obj.getHTMLElement = function () {
-		return this.div;
-	}
+	course.element = document.createElement('div');
+	course.element.setAttribute('class','course-container');
+	course.innerElement = document.createElement('div');
+	course.innerElement.setAttribute('class','course');
+	course.element.appendChild(course.innerElement);
 	
-	obj.begin = begin;
-	obj.length = length;
+	course.innerElement.appendChild(course.name.element.cloneNode(true));
+	course.innerElement.appendChild(course.place.element.cloneNode(true));
+	course.innerElement.appendChild(course.teacher.element.cloneNode(true));
 	
-	obj.setPosition = function (zero, ppm) {
-		obj.div.style.top = ppm*(zero + obj.begin) + 'px';
-		obj.div.style.height = ppm*obj.length + 'px';
+	course.position = 0;
+	course.width = 0;
+	course.height = 0;
+	
+	course.replace = function(h)
+	{
+		this.position = h;
+		this.element.style.top = this.position + 'px';
 	}
 	
-	obj.setColor = function ( red, green, blue, alpha) {
-		obj.div.style.background = 'rgba(' + red + ',' + green + ',' + blue + ',' + alpha + ')';
-		obj.div.style.background = 
-			'linear-gradient(to bottom,' + 
-			'rgba(' + Math.round(red) + ',' + Math.round(green) + ',' + Math.round(blue) + ',' + alpha + '),' + 
-			'rgba(' + Math.round(0.75*red) + ',' + Math.round(0.75*green) + ',' + Math.round(0.75*blue) + ',' + alpha + '))';
-	}
+	course.resize = function(w,h)
+	{
+		this.width = w;
+		this.height = h;
+		this.element.style.width = this.width + 'px';
+		this.element.style.height = this.height + 'px';
+	};
 	
-	switch(type) {
-		case Course.NONE:
-			obj.setColor(127,127,127,1);
-		break;
-		case Course.LECTURE:
-			obj.setColor(255,0,0,1);
-		break;
-		case Course.SEMINAR:
-			obj.setColor(0,255,0,1);
-		break;
-		case Course.ASSIGN:
-			obj.setColor(0,0,255,1);
-		break;
-		case Course.LABWORK:
-			obj.setColor(255,255,0,1);
-		break;
-		case Course.TEST:
-			obj.setColor(255,0,255,1);
-		break;
-		case Course.EXAM:
-			obj.setColor(0,255,255,1);
-		break;
-		case Course.GYM:
-			obj.setColor(255,255,255,1);
-		break;
-	}
+	course.parent = undefined;
 	
-	return obj;
-}
+	return course;
+};

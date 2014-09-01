@@ -1,56 +1,51 @@
-﻿var Day = new Object;
+Day = new Object();
 
-Day.TOP_HEADER = 28;
-Day.TOP_PADDING = 12;
-Day.BOTTOM_PADDING = 8;
-
-Day.create = function (day, name) {
-	var obj = new Object();
+Day.create = function(name)
+{
+	var day = new Object();
 	
-	obj.div = document.createElement("div");
-	obj.div.className = "day";
+	day.name = name;
+	day.start = 0;
+	day.length = 0;
 	
-	obj.day = day;
+	day.element = document.createElement('div');
+	day.element.setAttribute('class','day');
 	
-	obj.divHeader = document.createElement("div");
-	obj.divHeader.className = "dayHeader";
-	obj.divHeader.innerHTML = name;
-	obj.divHeader.style.height = Day.TOP_HEADER + 'px';
-	obj.divHeader.style.marginBottom = Day.TOP_PADDING + 'px';
-	obj.div.appendChild(obj.divHeader);
+	day.headerElement = document.createElement('h3');
+	day.headerElement.setAttribute('class','day-header');
+	day.headerElement.innerHTML = day.name;
+	day.element.appendChild(day.headerElement);
 	
-	obj.getHTMLElement = function () {
-		return obj.div;
-	}
+	day.courses = new Array();
 	
-	obj.getLength = function () {
-		return this.div.offsetHeight;
-	}
+	day.add = function (course)
+	{
+		this.courses.push(course);
+		this.element.appendChild(course.element);
+	};
 	
-	obj.list = new Array();
-	obj.addCourse = function ( course ) {
+	day.width = 0;
+	day.height = 0;
+	day.paddingTop = 0;
 	
-		if(this.list.length == 0) {
-			obj.begin = course.begin;
-		}
-		obj.length = course.begin + course.length - obj.begin;
+	day.resize = function (w,h,pt)
+	{
+		this.width = w;
+		this.height = h;
+		this.element.style.width = w + 'px';
+		this.element.style.height = h + 'px';
 		
-		this.list.push(course);
-		this.div.appendChild(course.getHTMLElement());
+		this.paddingTop = pt;
 		
-	}
-	
-	obj.resize = function (days) {
-		this.div.style.width = 100/days + '%';
-	}
-	
-	obj.normalize = function (begin, ppm) {
-		var zero = -begin;
-		for(var i = 0; i < this.list.length; i++) {
-			this.list[i].setPosition(zero,ppm);
-			zero -= this.list[i].length;
+		for(var i = 0; i < this.courses.length; ++i)
+		{
+			var course = this.courses[i];
+			course.replace(this.paddingTop + (this.height - this.paddingTop)*(course.start - this.start)/this.length);
+			course.resize(this.width, (this.height - this.paddingTop)*course.length/this.length);
 		}
-	}
+	};
 	
-	return obj;
+	day.parent = undefined;
+	
+	return day;
 }
