@@ -1,16 +1,46 @@
+Type = new Object();
 Subject = new Object();
 Location = new Object();
 Teacher = new Object();
 
-Subject.create = function (name)
+Type.create = function (name)
+{
+	var type = new Object();
+	
+	type.name = name;
+	type.element = document.createElement('div');
+	type.element.classList.add('course-type');
+	type.element.innerHTML = type.name;
+	
+	type.cloneElement = function ()
+	{
+		var cloned_elem = this.element.cloneNode(true);
+		return cloned_elem;
+	}
+	
+	return type;
+}
+
+Subject.COMMON  = 0x1;
+Subject.SPECIAL = 0x2;
+Subject.LIBERAL = 0x3;
+
+Subject.create = function (name,type)
 {
 	var subject = new Object();
 	
 	subject.name = name;
+	subject.type = type;
 	
 	subject.element = document.createElement('div');
-	subject.element.setAttribute('class','course-name');
+	subject.element.classList.add('course-name');
 	subject.element.innerHTML = subject.name;
+	
+	subject.cloneElement = function ()
+	{
+		var cloned_elem = this.element.cloneNode(true);
+		return cloned_elem;
+	}
 	
 	return subject;
 }
@@ -23,7 +53,7 @@ Location.create = function (builing,auditory)
 	location.auditory = auditory;
 	
 	location.element = document.createElement('div');
-	location.element.setAttribute('class','course-place');
+	location.element.classList.add('course-place');
 	if(location.builing.length > 0)
 	{
 		location.element.innerHTML = location.builing + ' ' + location.auditory;
@@ -31,6 +61,12 @@ Location.create = function (builing,auditory)
 	else
 	{
 		location.element.innerHTML = location.auditory;
+	}
+	
+	location.cloneElement = function ()
+	{
+		var cloned_elem = this.element.cloneNode(true);
+		return cloned_elem;
 	}
 	
 	return location;
@@ -43,8 +79,14 @@ Teacher.create = function (name)
 	teacher.name = name;
 	
 	teacher.element = document.createElement('div');
-	teacher.element.setAttribute('class','teacher');
+	teacher.element.classList.add('teacher');
 	teacher.element.innerHTML = teacher.name;
+	
+	teacher.cloneElement = function ()
+	{
+		var cloned_elem = this.element.cloneNode(true);
+		return cloned_elem;
+	}
 	
 	return teacher;
 }

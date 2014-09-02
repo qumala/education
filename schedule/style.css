@@ -35,6 +35,7 @@ h3
 
 .week
 {	
+	position: fixed;
 	display: inline-block;
 }
 
@@ -80,6 +81,14 @@ h3
 	background-color: #AAAAAA;
 }
 
+.course-type
+{
+	position: absolute;
+	right: 4px;
+	bottom: 4px;
+	color: rgba(0,0,0,0.32);
+}
+
 .course-name
 {
 	margin-left: 4px;
@@ -94,4 +103,31 @@ h3
 .teacher
 {
 	margin-left: 4px;
+}
+
+.time-current
+{
+	background-color: #FFFF22;
+}
+
+.time-next
+{
+	background-color: #DDDDDD;
+}
+
+.time-previous
+{
+	background-color: #66DD44;
+}
+
+.time-nearest
+{
+	background-color: #FF4422;
+}
+
+.timer-remain
+{
+	position: absolute;
+	right: 4px;
+	color: #440000;
 }

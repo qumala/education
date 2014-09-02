@@ -32,4 +32,9 @@ frame.init = function()
 		this.week = week;
 		this.element.appendChild(week.element);
 	};
+	
+	this.mark = function(date)
+	{
+		this.week.mark(date);
+	}
 };

@@ -1,9 +1,10 @@
 Day = new Object();
 
-Day.create = function(name)
+Day.create = function(num,name)
 {
 	var day = new Object();
 	
+	day.num = num;
 	day.name = name;
 	day.start = 0;
 	day.length = 0;
@@ -46,6 +47,39 @@ Day.create = function(name)
 	};
 	
 	day.parent = undefined;
+	
+	/* Returns false if day ends */
+	day.mark = function(time)
+	{
+		var remains = false;
+		var nearest = null;
+		var record = 24*60;
+		for(var i = 0; i < this.courses.length; ++i)
+		{
+			var course = this.courses[i];
+			if(course.mark(time))
+			{
+				if(course.start < record && course.start - time > 0)
+				{
+					record = course.start;
+					nearest = course;
+				}
+				remains = true;
+			}
+		}
+		if(nearest != null)
+		{
+			nearest.markNearest(time);
+		}
+		return remains;
+	}
+	day.unmark = function()
+	{
+		for(var i = 0; i < this.courses.length; ++i)
+		{
+			this.courses[i].unmark();
+		}
+	}
 	
 	return day;
 }

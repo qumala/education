@@ -96,5 +96,62 @@ Week.create = function(start,length)
 		week.timelineElement.appendChild(timestamp.element);
 	}
 	
+	week.mark = function(date)
+	{
+		/* Unmarks all days */
+		for(var i = 0; i < this.days.length; ++i)
+		{
+			this.days[i].unmark();
+		}
+		
+		/* Gets current day */
+		var current = date.getDay();
+		var time = date.getHours()*60 + date.getMinutes();
+		
+		/* Marks current day */
+		var remains = false;
+		for(var i = 0; i < this.days.length; ++i)
+		{
+			if(this.days[i].num == current && this.days[i].start + this.days[i].length > time)
+			{
+				remains = this.days[i].mark(time);
+			}
+		}
+		/* If day ends */
+		if(!remains)
+		{
+			var next = current + 1;
+			time -= 24*60;
+			
+			/* Looks for next day */
+			var found = false;
+			do
+			{
+				for(var i = 0; i < this.days.length; ++i)
+				{
+					if(this.days[i].num == next)
+					{
+						found = this.days[i].mark(time);
+						if(found)
+						{
+							break;
+						}
+					}
+				}
+				if(found)
+				{
+					break;
+				}
+				next++;
+				time -= 24*60;
+				if(next > 6)
+				{
+					next = 0;
+				}
+			}
+			while(!found && time > -7*24*60);
+		}
+	}
+	
 	return week;
 }
