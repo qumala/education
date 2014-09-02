@@ -2,7 +2,7 @@ html
 {
 	margin: 0;
 	padding: 0;
-	font-family: "droid sans", "sans-serif";
+	font-family: "droid sans", "dejavu sans", sans-serif;
 }
 
 body
@@ -85,7 +85,7 @@ h3
 {
 	position: absolute;
 	right: 4px;
-	bottom: 4px;
+	bottom: 2px;
 	color: rgba(0,0,0,0.32);
 }
 
