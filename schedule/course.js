@@ -29,69 +29,23 @@ Course.create = function (start,length,type,name,place,teacher)
 	course.innerElement.setAttribute('class','course');
 	course.element.appendChild(course.innerElement);
 	
+	course.slider = new Object();
+	course.slider.element = document.createElement('div');
+	course.slider.element.setAttribute('class','course-slider');
+	course.innerElement.appendChild(course.slider.element);
+	course.slider.coverage = 0.0;
+	course.resizeSlider = function ()
+	{
+		this.slider.element.style.height = this.slider.coverage*this.height + 'px';
+	}
+	
 	course.timer = new Object();
 	course.timer.element = document.createElement('div');
 	course.timer.element.style.display = 'none';
 	course.innerElement.appendChild(course.timer.element);
 	
-	course.innerElement.appendChild(course.type.cloneElement());
-	
-	course.innerElement.appendChild(course.name.cloneElement());
-	course.innerElement.appendChild(course.place.cloneElement());
-	course.innerElement.appendChild(course.teacher.cloneElement());
-	
-	course.position = 0;
-	course.width = 0;
-	course.height = 0;
-	
-	course.replace = function(h)
+	course.printTime = function (time)
 	{
-		this.position = h;
-		this.element.style.top = this.position + 'px';
-	}
-	
-	course.resize = function(w,h)
-	{
-		this.width = w;
-		this.height = h;
-		this.element.style.width = this.width + 'px';
-		this.element.style.height = this.height + 'px';
-	};
-	
-	course.parent = undefined;
-	
-	course.state = Course.NONE;
-	
-	course.mark = function (time)
-	{
-		if(time < this.start)
-		{
-			this.state = Course.NEXT;
-			this.innerElement.classList.add('time-next');
-			return true;
-		}
-		if(time >= this.start)
-		{
-			if(time <= this.start + this.length)
-			{
-				this.state = Course.CURRENT;
-				this.innerElement.classList.add('time-current');
-				return true;
-			}
-			if(time > this.start + this.length)
-			{
-				this.state = Course.PREVIOUS;
-				this.innerElement.classList.add('time-previous');
-				return false;
-			}
-		}
-	}
-	course.markNearest = function (time)
-	{
-		time = this.start - time;
-		
-		this.state = Course.NEAREST;
-		this.innerElement.classList.add('time-nearest');
 		this.timer.element.style.display = 'inline-block';
 		this.timer.element.setAttribute('class','timer-remain');
 		
@@ -119,17 +73,94 @@ Course.create = function (start,length,type,name,place,teacher)
 			this.timer.element.style.fontWeight = 'bold';
 		}
 		
+		return string;
+	}
+	
+	course.innerElement.appendChild(course.type.cloneElement());
+	
+	course.innerElement.appendChild(course.name.cloneElement());
+	course.innerElement.appendChild(course.place.cloneElement());
+	course.innerElement.appendChild(course.teacher.cloneElement());
+	
+	course.position = 0;
+	course.width = 0;
+	course.height = 0;
+	
+	course.replace = function(h)
+	{
+		this.position = h;
+		this.element.style.top = this.position + 'px';
+	}
+	
+	course.resize = function(w,h)
+	{
+		this.width = w;
+		this.height = h;
+		this.element.style.width = this.width + 'px';
+		this.element.style.height = this.height + 'px';
+
+	};
+	
+	course.parent = undefined;
+	
+	course.state = Course.NONE;
+	
+	course.mark = function (time)
+	{
+		if(time < this.start)
+		{
+			this.state = Course.NEXT;
+			this.innerElement.classList.add('time-next');
+			return true;
+		}
+		if(time >= this.start)
+		{
+			if(time <= this.start + this.length)
+			{
+				this.state = Course.CURRENT;
+				this.innerElement.classList.add('time-current');
+				
+				this.slider.coverage = (time - this.start)/this.length;
+				this.resizeSlider();
+				
+				var ltime = this.start + this.length - time;
+				this.printTime(ltime);
+				
+				return false;
+			}
+			if(time > this.start + this.length)
+			{
+				this.state = Course.PREVIOUS;
+				this.innerElement.classList.add('time-previous');
+				
+				return false;
+			}
+		}
+	}
+	course.markNearest = function (time)
+	{
+		this.state = Course.NEAREST;
+		this.innerElement.classList.add('time-nearest');
+		
+		time = this.start - time;
+		var string = this.printTime(time);
+		
 		document.title = string + ' left';
 	}
 	course.unmark = function ()
 	{
 		this.state = Course.NONE;
+		
 		this.innerElement.classList.remove('time-current');
 		this.innerElement.classList.remove('time-previous');
 		this.innerElement.classList.remove('time-next');
 		this.innerElement.classList.remove('time-nearest');
+		
 		course.timer.element.style.display = 'none';
 		this.timer.element.style.fontWeight = 'normal';
+		
+		this.slider.coverage = 0.0;
+		this.resizeSlider();
 	}
 	
 	return course;

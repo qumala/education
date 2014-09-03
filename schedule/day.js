@@ -59,7 +59,7 @@ Day.create = function(num,name)
 			var course = this.courses[i];
 			if(course.mark(time))
 			{
-				if(course.start < record && course.start - time > 0)
+				if(course.start < record)
 				{
 					record = course.start;
 					nearest = course;

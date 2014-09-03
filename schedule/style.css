@@ -105,6 +105,15 @@ h3
 	margin-left: 4px;
 }
 
+.course-slider
+{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	background-color: #66DD44;
+}
+
 .time-current
 {
 	background-color: #FFFF22;
