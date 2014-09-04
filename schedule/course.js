@@ -27,6 +27,8 @@ Course.create = function (start,length,type,name,place,teacher)
 	course.element.setAttribute('class','course-container');
 	course.innerElement = document.createElement('div');
 	course.innerElement.setAttribute('class','course');
+	course.innerElement.href = course.name.link;
+	course.innerElement.onclick = function () {window.location.href = this.href;};
 	course.element.appendChild(course.innerElement);
 	
 	course.slider = new Object();
@@ -125,16 +127,15 @@ Course.create = function (start,length,type,name,place,teacher)
 				
 				var ltime = this.start + this.length - time;
 				this.printTime(ltime);
-				
-				return false;
+			
 			}
 			if(time > this.start + this.length)
 			{
 				this.state = Course.PREVIOUS;
 				this.innerElement.classList.add('time-previous');
-				
-				return false;
 			}
+			
+			return false;
 		}
 	}
 	course.markNearest = function (time)

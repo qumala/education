@@ -15,14 +15,14 @@ window.onload = function main()
 	    sat = Day.create( 6, 'Суббота'     );
 	    
 	var 
-	    sbp  = Subject.create( 'ФТТ',       Subject.COMMON  ),
-	    mmp  = Subject.create( 'ММФ',       Subject.COMMON  ),
-	    eng  = Subject.create( 'ИнЯз',      Subject.LIBERAL ),
-	    dis  = Subject.create( 'ЦИС',       Subject.SPECIAL ),
-	    unix = Subject.create( 'UNIX',      Subject.SPECIAL ),
-	    sapr = Subject.create( 'САПР',      Subject.SPECIAL ),
-	    scdb = Subject.create( 'СУБД',      Subject.SPECIAL ),
-	    phil = Subject.create( 'Философия', Subject.LIBERAL );
+	    sbp  = Subject.create( 'ФТТ',       '../courses/sbp.html',  Subject.COMMON  ),
+	    mmp  = Subject.create( 'ММФ',       '../courses/mmp.html',  Subject.COMMON  ),
+	    eng  = Subject.create( 'ИнЯз',      '../courses/eng.html',  Subject.LIBERAL ),
+	    dis  = Subject.create( 'ЦИС',       '../courses/dis.html',  Subject.SPECIAL ),
+	    unix = Subject.create( 'UNIX',      '../courses/unix.html', Subject.SPECIAL ),
+	    sapr = Subject.create( 'САПР',      '../courses/sapr.html', Subject.SPECIAL ),
+	    scdb = Subject.create( 'СУБД',      '../courses/scdb.html', Subject.SPECIAL ),
+	    phil = Subject.create( 'Философия', '../courses/phil.html', Subject.LIBERAL );
 	    
 	var 
 	    kozhevnikov = Teacher.create('Кожевников'),

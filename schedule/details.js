@@ -25,11 +25,12 @@ Subject.COMMON  = 0x1;
 Subject.SPECIAL = 0x2;
 Subject.LIBERAL = 0x3;
 
-Subject.create = function (name,type)
+Subject.create = function (name,link,type)
 {
 	var subject = new Object();
 	
 	subject.name = name;
+	subject.link = link;
 	subject.type = type;
 	
 	subject.element = document.createElement('div');
