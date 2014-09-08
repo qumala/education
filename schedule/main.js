@@ -51,7 +51,8 @@ window.onload = function main()
 	mon.add(Course.create(14*60 + 15, 1*60 + 35, LECTURE,  sbp,  nsu(413),       kozhevnikov ));
 	mon.add(Course.create(16*60 +  0, 1*60 + 35, SEMINAR,  sbp,  nsu(405),       pletnev     ));
 	
-	tue.add(Course.create( 9*60 +  0, 1*60 + 35, PRACTICE, sbp,  nsu('т' + 304), pletnev     ));
+	// tue.add(Course.create( 9*60 +  0, 1*60 + 35, PRACTICE, sbp,  nsu('т' + 304), pletnev     ));
+	tue.add(Course.create(13*60 + 45, 1*60 + 35, PRACTICE, scdb, inp(508),       sabitov     ));
 	tue.add(Course.create(16*60 +  0, 1*60 + 35, SEMINAR,  mmp,  nsu(322),       bugaeva     ));
 	tue.add(Course.create(17*60 + 45, 1*60 + 35, SEMINAR,  eng,  nsu(320),       sapchenko   ));
 	
@@ -60,12 +61,11 @@ window.onload = function main()
 	wed.add(Course.create(14*60 + 15, 1*60 + 35, PRACTICE, unix, inp(508),       rutman      ));
 	wed.add(Course.create(16*60 +  0, 2*60 + 25, PRACTICE, sapr, inp(508),       kurilin     ));
 	
-	// thu.add(Course.create( 9*60 +  0, 1*60 + 35, LECTURE,  scdb, inp(508),       pirogov     ));
+	thu.add(Course.create( 9*60 +  0, 1*60 + 35, LECTURE,  scdb, inp(508),       pirogov     ));
 	thu.add(Course.create(14*60 + 15, 1*60 + 35, LECTURE,  sbp,  nsu(253),       kozhevnikov ));
 	thu.add(Course.create(16*60 +  0, 1*60 + 35, SEMINAR,  sbp,  nsu(307 + 'а'), pletnev     ));
 	thu.add(Course.create(17*60 + 45, 1*60 + 35, SEMINAR,  phil, nsu(247),       borisov     ));
 	
-	fri.add(Course.create(12*60 + 30, 1*60 + 35, PRACTICE, scdb, inp(508),       sabitov     ));
 	fri.add(Course.create(14*60 + 15, 1*60 + 35, SEMINAR,  eng,  nsu(328),       sapchenko   ));
 	
 	sat.add(Course.create( 9*60 +  0, 1*60 + 35, LECTURE,  phil, nsu('БА'),      tsyplakov   ));

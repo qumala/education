@@ -127,6 +127,10 @@ Week.create = function(start,length)
 			var found = false;
 			do
 			{
+				if(next > 6)
+				{
+					next = 0;
+				}
 				for(var i = 0; i < this.days.length; ++i)
 				{
 					if(this.days[i].num == next)
@@ -144,10 +148,6 @@ Week.create = function(start,length)
 				}
 				next++;
 				time -= 24*60;
-				if(next > 6)
-				{
-					next = 0;
-				}
 			}
 			while(!found && time > -7*24*60);
 		}
