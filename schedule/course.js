@@ -11,8 +11,9 @@ Course.CURRENT   = 0x1;
 Course.NEXT      = 0x2;
 Course.PREVIOUS  = 0x3;
 Course.NEAREST   = 0x4;
+Course.UNABLE    = 0x5;
 
-Course.create = function (start,length,type,name,place,teacher)
+Course.create = function (start,length,type,name,place,teacher,flicker)
 {
 	var course = new Object();
 	
@@ -22,6 +23,7 @@ Course.create = function (start,length,type,name,place,teacher)
 	course.name    = name;
 	course.place   = place;
 	course.teacher = teacher;
+	course.flicker = flicker;
 	
 	course.element = document.createElement('div');
 	course.element.setAttribute('class','course-container');
@@ -110,6 +112,20 @@ Course.create = function (start,length,type,name,place,teacher)
 	
 	course.mark = function (time)
 	{
+		/*
+		if(flicker != undefined)
+		{
+			var onejan = new Date(this.getFullYear(),0,1);
+			var doy = Math.ceil((this - onejan) / 86400000);
+			var week_flicker = Math.ceil(doy/7) % 2;
+			if(this.flicker != week.flicker)
+			{
+				this.state = Course.UNABLE;
+				this.innerElement.classList.add('time-unable');
+				return false;
+			}
+		}
+		*/
 		if(time < this.start)
 		{
 			this.state = Course.NEXT;

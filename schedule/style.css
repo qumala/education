@@ -136,6 +136,11 @@ h3
 	background-color: #FF4422;
 }
 
+.time-unable
+{
+	background-color: #888888;
+}
+
 .timer-remain
 {
 	position: absolute;
