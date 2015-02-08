@@ -2,7 +2,7 @@ window.onload = function main()
 {
 	frame.init();
 	
-	var week = Week.create( 9*60 + 0, 7*(1*60 + 45) );
+	var week = Week.create( 9*60 + 0, 6*(1*60 + 45) );
 	week.paddingTop = 28;
 	week.paddingLeft = 64;
 	
@@ -25,7 +25,6 @@ window.onload = function main()
 	    apmc = Subject.create( 'Арх.иПр.МК','../courses/apmc.html', Subject.SPECIAL ),
 	    pexp = Subject.create( 'ЭВМвФиз.Э.','../courses/pexp.html', Subject.SPECIAL ),
 	    phil = Subject.create( 'Философия', '../courses/phil.html', Subject.LIBERAL );
-	    eco  = Subject.create( 'Экол.Проб.','../courses/eco.html',  Subject.LIBERAL );
 	    
 	var 
 	    kozhevnikov = Teacher.create('Кожевников А.А.'),
@@ -33,7 +32,6 @@ window.onload = function main()
 	    kovalevsky  = Teacher.create('Ковалевский А.П.'),
 	    hruschev    = Teacher.create('Хрущев С.Е.'),
 	    kasyanova   = Teacher.create('Касьянова И.Р.'),
-	    arzhannikov = Teacher.create('Аржанников А.В.'),
 	    miginsky    = Teacher.create('Мигинский Д.С.'),
 	    gayazov     = Teacher.create('Гаязов В.С.'),
 	    kurilin     = Teacher.create('Курилин О.Ю.'),
@@ -69,14 +67,13 @@ window.onload = function main()
 	thu.add(Course.create(10*60 + 45, 3*60 + 20, PRACTICE, tsani,nsu(346),       unknown     ));
 	thu.add(Course.create(14*60 + 15, 1*60 + 35, LECTURE,  stat, nsu('БА'),      kovalevsky  ));
 	thu.add(Course.create(17*60 + 45, 1*60 + 35, SEMINAR,  eng,  nsu(436),       kasyanova   ));
-	thu.add(Course.create(19*60 + 20, 1*60 + 35, LECTURE,  eco,  nsu('БА'),      arzhannikov ));
 	
 	fri.add(Course.create(10*60 + 45, 1*60 + 35, LECTURE,  pexp, inp(508),       korol       ));
 	fri.add(Course.create(12*60 + 30, 1*60 + 35, SEMINAR,  pexp, inp(508),       korol       ));
 	
 	sat.add(Course.create( 9*60 +  0, 1*60 + 35, LECTURE,  phil, nsu('БА'),      tsyplakov   ));
 	sat.add(Course.create(10*60 + 45, 1*60 + 35, SEMINAR,  phil, nsu(437),       tsyplakov   ));
-	sat.add(Course.create(12*60 + 30, 0*60 + 45, LECTURE,  ftt,  nsu('БА'),     kozhevnikov ));
+	sat.add(Course.create(12*60 + 30, 0*60 + 45, LECTURE,  ftt,  nsu('БА'),      kozhevnikov ));
 	
 	week.add(mon);
 	week.add(tue);
