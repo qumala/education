@@ -42,7 +42,6 @@ h3
 .week-timeline
 {
 	display: inline-block;
-	//width: 100px;
 }
 
 .timestamp
@@ -57,12 +56,12 @@ h3
 .day
 {
 	display: inline-block;
-	border-left: 2px solid #332622;
-	border-right: 2px solid #332622;
+	border-left: 5px solid #332622;
+	border-right: 5px solid #332622;
 }
 .day-header
 {
-	//padding-bottom: 4px;
+	padding-bottom: 4px;
 	text-align: center;
 	color: #888888;
 }

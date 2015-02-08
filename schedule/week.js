@@ -64,7 +64,7 @@ Week.create = function(start,length)
 		/* Days placing */
 		for(var i = 0; i < this.days.length; ++i)
 		{
-			this.days[i].resize((this.width - this.paddingLeft)/(this.days.length+0.2), h, this.paddingTop);
+			this.days[i].resize((this.width - this.paddingLeft)/(this.days.length), h, this.paddingTop);
 		}
 		
 		/* Timeline placing */
