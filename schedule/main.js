@@ -26,7 +26,6 @@ window.onload = function main()
 	    pexp = Subject.create( 'ЭВМвФиз.Э.','../courses/pexp.html', Subject.SPECIAL ),
 	    phil = Subject.create( 'Философия', '../courses/phil.html', Subject.LIBERAL );
 	    eco  = Subject.create( 'Экол.Проб.','../courses/eco.html',  Subject.LIBERAL );
-	    
 	var 
 	    kozhevnikov = Teacher.create('Кожевников А.А.'),
 	    pletnev     = Teacher.create('Плетнев Н.Г.'),
@@ -52,25 +51,31 @@ window.onload = function main()
 	    LECTURE  = Type.create('Лекция'),
 	    SEMINAR  = Type.create('Семинар'),
 	    PRACTICE = Type.create('Практикум');
-	
+		EMPTY = Type.create('Окно');
+		
 	mon.add(Course.create( 9*60 +  0, 1*60 + 35, SEMINAR,  ood,  inp(508),       gayazov     ));
 	mon.add(Course.create(10*60 + 45, 1*60 + 35, LECTURE,  ood,  iae('УЦ'),      miginsky    ));
+	mon.add(Course.create(12*60 + 30, 1*60 + 35, EMPTY,  null, null,       null    ));
 	mon.add(Course.create(14*60 + 15, 1*60 + 35, LECTURE,  ftt,  nsu(316),       kozhevnikov ));
 	mon.add(Course.create(16*60 +  0, 1*60 + 35, SEMINAR,  ftt,  nsu(247),       pletnev     ));
 	mon.add(Course.create(17*60 + 45, 1*60 + 35, SEMINAR,  stat, nsu(338),       hruschev    ));
 	
 	tue.add(Course.create( 9*60 +  0, 3*60 + 20, PRACTICE, apmc, inp(508),       kurilin     ));
+	tue.add(Course.create(12*60 + 30, 1*60 + 35, EMPTY,  null, null,       null    ));
 	tue.add(Course.create(14*60 + 15, 1*60 + 35, SEMINAR,  eng,  nsu(338),       kasyanova   ));
 	tue.add(Course.create(16*60 +  0, 0*60 + 45, SEMINAR,  ftt,  nsu(433),       pletnev     ));
 	
 	wed.add(Course.create( 9*60 +  0, 1*60 + 35, LECTURE,  elem, inp('КЗал'),    zhulanov    ));
 	wed.add(Course.create(10*60 + 45, 1*60 + 35, LECTURE,  proc, inp('КЗал'),    unknown     ));
 	
+	thu.add(Course.create(9*60 + 0, 1*60 + 35, EMPTY,  null, null,       null    ));
 	thu.add(Course.create(10*60 + 45, 3*60 + 20, PRACTICE, tsani,nsu(346),       unknown     ));
 	thu.add(Course.create(14*60 + 15, 1*60 + 35, LECTURE,  stat, nsu('БА'),      kovalevsky  ));
+	thu.add(Course.create(16*60 + 0, 1*60 + 35, EMPTY,  null, null,       null    ));
 	thu.add(Course.create(17*60 + 45, 1*60 + 35, SEMINAR,  eng,  nsu(436),       kasyanova   ));
 	thu.add(Course.create(19*60 + 20, 1*60 + 35, LECTURE,  eco,  nsu('БА'),      arzhannikov ));
 	
+	fri.add(Course.create(9*60 + 0, 1*60 + 35, EMPTY,  null, null,       null    ));
 	fri.add(Course.create(10*60 + 45, 1*60 + 35, LECTURE,  pexp, inp(508),       korol       ));
 	fri.add(Course.create(12*60 + 30, 1*60 + 35, SEMINAR,  pexp, inp(508),       korol       ));
 	

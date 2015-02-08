@@ -56,8 +56,9 @@ h3
 .day
 {
 	display: inline-block;
+	border-left: 5px solid #332622;
+	border-right: 5px solid #332622;
 }
-
 .day-header
 {
 	padding-bottom: 4px;
@@ -146,4 +147,8 @@ h3
 	position: absolute;
 	right: 4px;
 	color: #440000;
+}
+.Окно
+{
+	background:#3D3D3D;
 }

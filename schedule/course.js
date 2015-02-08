@@ -4,6 +4,7 @@ Course = new Object();
 Course.LECTURE  = 0x1;
 Course.SEMINAR  = 0x2;
 Course.PRACTICE = 0x3;
+Course.EMPTY = 0x4;
 
 /* Timing state */
 Course.NONE      = 0x0;
@@ -28,17 +29,21 @@ Course.create = function (start,length,type,name,place,teacher,flicker)
 	course.element = document.createElement('div');
 	course.element.setAttribute('class','course-container');
 	course.innerElement = document.createElement('div');
-	course.innerElement.setAttribute('class','course');
+	course.innerElement.setAttribute('class','course ' + type.name);
+	if( name != null )
+	{
 	course.innerElement.href = course.name.link;
 	course.innerElement.onclick = function () { window.open(this.href); };
 	course.innerElement.onmousedown = function (event) { if(event.which == 2) { window.open(this.href, '_blank'); } };
-	course.element.appendChild(course.innerElement);
 	
+	}
+	course.element.appendChild(course.innerElement);
 	course.slider = new Object();
 	course.slider.element = document.createElement('div');
 	course.slider.element.setAttribute('class','course-slider');
 	course.innerElement.appendChild(course.slider.element);
 	course.slider.coverage = 0.0;
+	
 	course.resizeSlider = function ()
 	{
 		this.slider.element.style.height = this.slider.coverage*this.height + 'px';
@@ -81,12 +86,13 @@ Course.create = function (start,length,type,name,place,teacher,flicker)
 		return string;
 	}
 	
+	if( type != null && name != null )
+	{
 	course.innerElement.appendChild(course.type.cloneElement());
-	
 	course.innerElement.appendChild(course.name.cloneElement());
 	course.innerElement.appendChild(course.place.cloneElement());
 	course.innerElement.appendChild(course.teacher.cloneElement());
-	
+	}
 	course.position = 0;
 	course.width = 0;
 	course.height = 0;
