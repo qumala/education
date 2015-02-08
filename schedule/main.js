@@ -2,7 +2,7 @@ window.onload = function main()
 {
 	frame.init();
 	
-	var week = Week.create( 9*60 + 0, 7*(1*60 + 45) );
+	var week = Week.create( 9*60 + 0, 6*(1*60 + 45) );
 	week.paddingTop = 28;
 	week.paddingLeft = 64;
 	
@@ -73,7 +73,6 @@ window.onload = function main()
 	thu.add(Course.create(14*60 + 15, 1*60 + 35, LECTURE,  stat, nsu('БА'),      kovalevsky  ));
 	thu.add(Course.create(16*60 + 0, 1*60 + 35, EMPTY,  null, null,       null    ));
 	thu.add(Course.create(17*60 + 45, 1*60 + 35, SEMINAR,  eng,  nsu(436),       kasyanova   ));
-	thu.add(Course.create(19*60 + 20, 1*60 + 35, LECTURE,  eco,  nsu('БА'),      arzhannikov ));
 	
 	fri.add(Course.create(9*60 + 0, 1*60 + 35, EMPTY,  null, null,       null    ));
 	fri.add(Course.create(10*60 + 45, 1*60 + 35, LECTURE,  pexp, inp(508),       korol       ));
