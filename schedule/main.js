@@ -54,7 +54,7 @@ window.onload = function main()
 	mon.add(Course.create( 9*60 +  0, 1*60 + 35, SEMINAR,  ood,  inp(508),       gayazov     ));
 	mon.add(Course.create(10*60 + 45, 1*60 + 35, LECTURE,  ood,  iae('УЦ'),      miginsky    ));
 	mon.add(Course.create(14*60 + 15, 1*60 + 35, LECTURE,  ftt,  nsu(415),       kozhevnikov ));
-	mon.add(Course.create(16*60 +  0, 1*60 + 35, SEMINAR,  ftt,  nsu(435),       pletnev     ,0));
+	mon.add(Course.create(16*60 +  0, 1*60 + 35, SEMINAR,  ftt,  nsu(435),       pletnev     ,1));
 	
 	tue.add(Course.create( 9*60 +  0, 3*60 + 20, PRACTICE, apmc, inp(508),       kurilin     ));
 	tue.add(Course.create(16*60 +  0, 1*60 + 35, SEMINAR,  ftt,  nsu(247),       pletnev     ));
@@ -73,7 +73,7 @@ window.onload = function main()
 	
 	sat.add(Course.create( 9*60 +  0, 1*60 + 35, LECTURE,  phil, nsu('БА'),      tsyplakov   ));
 	sat.add(Course.create(10*60 + 45, 1*60 + 35, SEMINAR,  phil, nsu(437),       tsyplakov   ));
-	sat.add(Course.create(12*60 + 30, 1*60 + 35, LECTURE,  ftt,  nsu(416),       kozhevnikov ,0));
+	sat.add(Course.create(12*60 + 30, 1*60 + 35, LECTURE,  ftt,  nsu(416),       kozhevnikov ,1));
 	
 	week.add(mon);
 	week.add(tue);

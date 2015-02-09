@@ -115,7 +115,7 @@ Course.create = function (start,length,type,name,place,teacher,flicker)
 		if(flicker != undefined)
 		{
 			var onejan = new Date(date.getFullYear(),0,1);
-			var doy = Math.ceil((date - onejan) / 86400000);
+			var doy = Math.ceil((date - onejan) / 86400000) + onejan.getDay();
 			var week_flicker = Math.ceil(doy/7) % 2;
 			if(this.flicker != week_flicker)
 			{
