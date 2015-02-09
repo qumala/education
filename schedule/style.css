@@ -138,7 +138,7 @@ h3
 
 .time-unable
 {
-	background-color: #888888;
+	opacity: 0;
 }
 
 .timer-remain

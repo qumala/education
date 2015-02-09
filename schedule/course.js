@@ -110,22 +110,27 @@ Course.create = function (start,length,type,name,place,teacher,flicker)
 	
 	course.state = Course.NONE;
 	
-	course.mark = function (time)
+	course.isUnable = function (date)
 	{
-		/*
 		if(flicker != undefined)
 		{
-			var onejan = new Date(this.getFullYear(),0,1);
-			var doy = Math.ceil((this - onejan) / 86400000);
+			var onejan = new Date(date.getFullYear(),0,1);
+			var doy = Math.ceil((date - onejan) / 86400000);
 			var week_flicker = Math.ceil(doy/7) % 2;
-			if(this.flicker != week.flicker)
+			if(this.flicker != week_flicker)
 			{
-				this.state = Course.UNABLE;
-				this.innerElement.classList.add('time-unable');
-				return false;
+				return true;
 			}
 		}
-		*/
+		return false;
+	}
+	
+	course.mark = function (time)
+	{
+		if(this.isUnable(new Date()))
+		{
+			return false;
+		}
 		if(time < this.start)
 		{
 			this.state = Course.NEXT;
@@ -169,6 +174,7 @@ Course.create = function (start,length,type,name,place,teacher,flicker)
 	{
 		this.state = Course.NONE;
 		
+		this.innerElement.classList.remove('time-unable');
 		this.innerElement.classList.remove('time-current');
 		this.innerElement.classList.remove('time-previous');
 		this.innerElement.classList.remove('time-next');
@@ -178,6 +184,13 @@ Course.create = function (start,length,type,name,place,teacher,flicker)
 		this.timer.element.style.fontWeight = 'normal';
 		
 		this.slider.coverage = 0.0;
+		
+		if(this.isUnable(new Date()))
+		{
+			this.state = Course.UNABLE;
+			this.innerElement.classList.add('time-unable');
+		}
+		
 		this.resizeSlider();
 	}
 	
