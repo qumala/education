@@ -54,10 +54,10 @@ window.onload = function main()
 	mon.add(Course.create( 9*60 +  0, 1*60 + 35, SEMINAR,  ood,  inp(508),       gayazov     ));
 	mon.add(Course.create(10*60 + 45, 1*60 + 35, LECTURE,  ood,  iae('УЦ'),      miginsky    ));
 	mon.add(Course.create(14*60 + 15, 1*60 + 35, LECTURE,  ftt,  nsu(415),       kozhevnikov ));
-	mon.add(Course.create(16*60 +  0, 1*60 + 35, SEMINAR,  ftt,  nsu(435),       pletnev     ,1));
+	mon.add(Course.create(16*60 +  0, 1*60 + 35, SEMINAR,  ftt,  nsu(435),       pletnev     ));
 	
 	tue.add(Course.create( 9*60 +  0, 3*60 + 20, PRACTICE, apmc, inp(508),       kurilin     ));
-	tue.add(Course.create(16*60 +  0, 1*60 + 35, SEMINAR,  ftt,  nsu(247),       pletnev     ));
+	tue.add(Course.create(16*60 +  0, 1*60 + 35, SEMINAR,  ftt,  nsu(247),       pletnev     ,1));
 	tue.add(Course.create(17*60 + 45, 1*60 + 35, SEMINAR,  eng,  nsu(326),       sapchenko   ));
 	
 	wed.add(Course.create( 9*60 +  0, 1*60 + 35, LECTURE,  elem, inp('КЗал'),    zhulanov    ));
