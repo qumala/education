@@ -67,8 +67,8 @@ window.onload = function main()
 	thu.add(Course.create(14*60 + 15, 1*60 + 35, LECTURE,  stat, nsu('БА'),      kovalevsky  ));
 	thu.add(Course.create(17*60 + 45, 1*60 + 35, SEMINAR,  stat, nsu(424),       hruschev    ));
 	
-	fri.add(Course.create(10*60 + 45, 1*60 + 35, LECTURE,  pexp, inp(508),       korol       ));
-	fri.add(Course.create(12*60 + 30, 1*60 + 35, SEMINAR,  pexp, inp(508),       korol       ));
+	fri.add(Course.create(12*60 + 30, 1*60 + 35, LECTURE,  pexp, inp(508),       korol       ));
+	fri.add(Course.create(14*60 + 15, 1*60 + 35, SEMINAR,  pexp, inp(508),       korol       ));
 	fri.add(Course.create(17*60 + 45, 1*60 + 35, SEMINAR,  eng,  nsu(436),       sapchenko   ));
 	
 	sat.add(Course.create( 9*60 +  0, 1*60 + 35, LECTURE,  phil, nsu('БА'),      tsyplakov   ));
