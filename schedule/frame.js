@@ -14,7 +14,7 @@ frame.init = function()
 		this.height = document.documentElement.clientHeight;
 		this.element.style.height = this.height + 'px';
 		
-		this.width = document.documentElement.clientWidth;
+		this.width = document.documentElement.clientWidth - 16;
 		// this.width = this.element.offsetWidth;
 		// this.element.style.width = this.width + 'px';
 		
