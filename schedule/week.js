@@ -25,12 +25,13 @@ Week.Timestamp.create = function (time,name)
 	return timestamp;
 }
 
-Week.create = function(start,length)
+Week.create = function(start, length, stamp)
 {
 	var week = new Object();
 	
 	week.start = start;
 	week.length = length;
+	week.stamp = stamp;
 	
 	week.element = document.createElement('div');
 	week.element.setAttribute('class','week');
@@ -81,7 +82,7 @@ Week.create = function(start,length)
 	week.timelineElement.style.width = week.paddingLeft + 'px';
 	week.element.appendChild(week.timelineElement);
 	
-	for(var time = week.start; time < week.start + week.length; time += 1*60 + 45)
+	for(var time = week.start; time < week.start + week.length; time += stamp)
 	{
 		var hours = Math.floor(time/60);
 		var minutes = time % 60;
