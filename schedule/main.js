@@ -42,15 +42,19 @@ window.onload = function main()
 	    PRACTICE = Type.create('Практикум');
 	
 	mon.add(Course.create( 9*60 +  0, 2*60 + 25, LECTURE,  grob, mil,            unknown     ));
+	mon.add(Course.create(14*60 + 30, 0*60 + 45, LECTURE,  econ, nsu('БА'),      unknown     ));
+	mon.add(Course.create(15*60 + 25, 0*60 + 45, SEMINAR,  econ, nsu(''),        unknown     ));
+	mon.add(Course.create(16*60 + 20, 1*60 + 40, SEMINAR,  cph,  nsu('436'),     unknown     ));
 	
-	tue.add(Course.create( 9*60 +  0, 0*60 + 45, LECTURE,  econ, nsu('БА'),      unknown     ));
-	tue.add(Course.create( 9*60 + 55, 0*60 + 45, SEMINAR,  econ, nsu(''),        unknown     ));
+	tue.add(Course.create(14*60 + 30, 1*60 + 40, LECTURE,  cph,  nsu('БА'),      unknown     ));
+	tue.add(Course.create(16*60 + 20, 1*60 + 40, LECTURE,  uel,  iae(''),        unknown     ));
+	tue.add(Course.create(18*60 + 10, 1*60 + 40, SEMINAR,  uel,  nsu(424),       unknown     ));
 	
-	wed.add(Course.create( 9*60 +  0, 1*60 + 40, LECTURE,  gfx,  inp(508),       valeev      , Course.UNABLE));
-	wed.add(Course.create(10*60 + 50, 1*60 + 40, SEMINAR,  gfx,  inp(508),       hairulin    , Course.UNABLE));
+	wed.add(Course.create( 9*60 +  0, 1*60 + 40, LECTURE,  gfx,  inp(508),       valeev,     Course.UNABLE));
+	wed.add(Course.create(10*60 + 50, 1*60 + 40, SEMINAR,  gfx,  inp(508),       hairulin,   Course.UNABLE));
 	
-	thu.add(Course.create(10*60 + 50, 1*60 + 40, LECTURE,  net,  inp(508),       idrisov     , Course.UNABLE));
-	thu.add(Course.create(12*60 + 40, 1*60 + 40, SEMINAR,  net,  inp(508),       cheblakov   , Course.UNABLE));
+	thu.add(Course.create(10*60 + 50, 1*60 + 40, LECTURE,  net,  inp(508),       idrisov,    Course.UNABLE));
+	thu.add(Course.create(12*60 + 40, 1*60 + 40, SEMINAR,  net,  inp(508),       cheblakov,  Course.UNABLE));
 	thu.add(Course.create(18*60 + 10, 1*60 + 40, SEMINAR,  eng,  nsu(326),       unknown     ));
 	
 	fri.add(Course.create(14*60 + 30, 1*60 + 40, SEMINAR,  eng,  nsu(330),       unknown     ));
