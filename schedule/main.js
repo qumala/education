@@ -2,7 +2,7 @@ window.onload = function main()
 {
 	frame.init();
 	
-	var week = Week.create( 9*60 + 0, 6*(1*60 + 45) );
+	var week = Week.create( 9*60 + 0, 6*(1*60 + 50) );
 	week.paddingTop = 28;
 	week.paddingLeft = 64;
 	
@@ -11,76 +11,56 @@ window.onload = function main()
 	    tue = Day.create( 2, 'Вторник'     ),
 	    wed = Day.create( 3, 'Среда'       ),
 	    thu = Day.create( 4, 'Четверг'     ),
-	    fri = Day.create( 5, 'Пятница'     ),
-	    sat = Day.create( 6, 'Суббота'     );
+	    fri = Day.create( 5, 'Пятница'     );
+	    // sat = Day.create( 6, 'Суббота'     );
 	    
 	var 
-	    ftt  = Subject.create( 'Физ.конд.с','../courses/ftt.html',  Subject.COMMON  ),
-	    stat = Subject.create( 'Мат.Ст.',   '../courses/stat.html', Subject.COMMON  ),
+	    grob = Subject.create( 'Гр.Об.',    '../courses/grob.html', Subject.LIBERAL ),
+	    econ = Subject.create( 'Экон.теор.','../courses/econ.html', Subject.LIBERAL ),
 	    eng  = Subject.create( 'Ин.Яз.',    '../courses/eng.html',  Subject.LIBERAL ),
-	    tsani= Subject.create( 'ТСАНИ',     '../courses/tsani.html',Subject.SPECIAL ),
-	    ood  = Subject.create( 'ООАиД',     '../courses/ood.html',  Subject.SPECIAL ),
-	    elem = Subject.create( 'Элем.Част.','../courses/elem.html', Subject.SPECIAL ),
-	    proc = Subject.create( 'Микропроц.','../courses/proc.html', Subject.SPECIAL ),
-	    apmc = Subject.create( 'Арх.иПр.МК','../courses/apmc.html', Subject.SPECIAL ),
-	    pexp = Subject.create( 'ЭВМвФиз.Э.','../courses/pexp.html', Subject.SPECIAL ),
-	    phil = Subject.create( 'Философия', '../courses/phil.html', Subject.LIBERAL );
+	    cph  = Subject.create( 'Выч.Физ.',  '../courses/cph.html',  Subject.COMMON  ),
+	    uel  = Subject.create( 'Мк.Электр.','../courses/uel.html',  Subject.COMMON  ),
+	    net  = Subject.create( 'Сети',      '../courses/net.html',  Subject.SPECIAL ),
+	    gfx  = Subject.create( 'Графика',   '../courses/gfx.html',  Subject.SPECIAL );
 	    
 	var 
-	    kozhevnikov = Teacher.create('Кожевников А.А.'),
-	    pletnev     = Teacher.create('Плетнев Н.Г.'),
-	    kovalevsky  = Teacher.create('Ковалевский А.П.'),
-	    hruschev    = Teacher.create('Хрущев С.Е.'),
-	    sapchenko   = Teacher.create('Сапченко Н.А.'),
-	    miginsky    = Teacher.create('Мигинский Д.С.'),
-	    gayazov     = Teacher.create('Гаязов В.С.'),
-	    kurilin     = Teacher.create('Курилин О.Ю.'),
-	    zhulanov    = Teacher.create('Жуланов В.В.'),
-	    tsyplakov   = Teacher.create('Цыплаков Д.А.'),
-	    korol       = Teacher.create('Король А.А.'),
-	    kovalenko   = Teacher.create('Коваленко Ю.В.'),
+	    idrisov     = Teacher.create('Идрисов Р.И.'),
+	    cheblakov   = Teacher.create('Чеблаков П.Б.'),
+	    valeev      = Teacher.create('Валеев Т.Ф.'),
+	    hairulin    = Teacher.create('Хайрулин С.С.'),
 	    unknown     = Teacher.create('');
 	    
 	var 
 	    nsu = function (aud) { return Location.create("",aud); },
-	    inp = function (aud) { return Location.create("ИЯФ",aud); };
-	    iae = function (aud) { return Location.create("ИАиЭ",aud); };
+	    inp = function (aud) { return Location.create("ИЯФ",aud); },
+	    iae = function (aud) { return Location.create("ИАиЭ",aud); },
+	    mil = Location.create("Часть",'');
 	
 	var 
 	    LECTURE  = Type.create('Лекция'),
 	    SEMINAR  = Type.create('Семинар'),
 	    PRACTICE = Type.create('Практикум');
 	
-	mon.add(Course.create( 9*60 +  0, 1*60 + 35, SEMINAR,  ood,  inp(508),       gayazov     ));
-	mon.add(Course.create(10*60 + 45, 1*60 + 35, LECTURE,  ood,  iae('УЦ'),      miginsky    ));
-	mon.add(Course.create(14*60 + 15, 1*60 + 35, LECTURE,  ftt,  nsu(415),       kozhevnikov ));
-	mon.add(Course.create(16*60 +  0, 1*60 + 35, SEMINAR,  ftt,  nsu(435),       pletnev     ));
+	mon.add(Course.create( 9*60 +  0, 2*60 + 25, LECTURE,  grob, mil,            unknown     ));
 	
-	tue.add(Course.create( 9*60 +  0, 3*60 + 20, PRACTICE, apmc, inp(508),       kurilin     ));
-	tue.add(Course.create(16*60 +  0, 1*60 + 35, SEMINAR,  ftt,  nsu(247),       pletnev     ,0));
-	tue.add(Course.create(17*60 + 45, 1*60 + 35, SEMINAR,  eng,  nsu(326),       sapchenko   ));
+	tue.add(Course.create( 9*60 +  0, 0*60 + 45, LECTURE,  econ, nsu('БА'),      unknown     ));
+	tue.add(Course.create( 9*60 + 55, 0*60 + 45, SEMINAR,  econ, nsu(''),        unknown     ));
 	
-	wed.add(Course.create( 9*60 +  0, 1*60 + 35, LECTURE,  elem, inp('КЗал'),    zhulanov    ));
-	wed.add(Course.create(10*60 + 45, 1*60 + 35, LECTURE,  proc, inp('КЗал'),    unknown     ));
+	wed.add(Course.create( 9*60 +  0, 1*60 + 40, LECTURE,  gfx,  inp(508),       valeev      , Course.UNABLE));
+	wed.add(Course.create(10*60 + 50, 1*60 + 40, SEMINAR,  gfx,  inp(508),       hairulin    , Course.UNABLE));
 	
-	thu.add(Course.create(10*60 + 45, 3*60 + 20, PRACTICE, tsani,nsu(346),       unknown     ));
-	thu.add(Course.create(14*60 + 15, 1*60 + 35, LECTURE,  stat, nsu('БА'),      kovalevsky  ));
-	thu.add(Course.create(17*60 + 45, 1*60 + 35, SEMINAR,  stat, nsu(424),       hruschev    ));
+	thu.add(Course.create(10*60 + 50, 1*60 + 40, LECTURE,  net,  inp(508),       idrisov     , Course.UNABLE));
+	thu.add(Course.create(12*60 + 40, 1*60 + 40, SEMINAR,  net,  inp(508),       cheblakov   , Course.UNABLE));
+	thu.add(Course.create(18*60 + 10, 1*60 + 40, SEMINAR,  eng,  nsu(326),       unknown     ));
 	
-	fri.add(Course.create(12*60 + 30, 1*60 + 35, LECTURE,  pexp, inp(508),       korol       ));
-	fri.add(Course.create(14*60 + 15, 1*60 + 35, SEMINAR,  pexp, inp(508),       korol       ));
-	fri.add(Course.create(17*60 + 45, 1*60 + 35, SEMINAR,  eng,  nsu(436),       sapchenko   ));
-	
-	sat.add(Course.create( 9*60 +  0, 1*60 + 35, LECTURE,  phil, nsu('БА'),      tsyplakov   ));
-	sat.add(Course.create(10*60 + 45, 1*60 + 35, SEMINAR,  phil, nsu(437),       tsyplakov   ));
-	sat.add(Course.create(12*60 + 30, 1*60 + 35, LECTURE,  ftt,  nsu(416),       kozhevnikov ,1));
+	fri.add(Course.create(14*60 + 30, 1*60 + 40, SEMINAR,  eng,  nsu(330),       unknown     ));
 	
 	week.add(mon);
 	week.add(tue);
 	week.add(wed);
 	week.add(thu);
 	week.add(fri);
-	week.add(sat);
+	// week.add(sat);
 	
 	frame.add(week);
 	
