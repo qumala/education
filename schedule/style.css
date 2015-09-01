@@ -35,7 +35,7 @@ h3
 
 .week
 {	
-	position: fixed;
+	position: absolute;
 	display: inline-block;
 }
 

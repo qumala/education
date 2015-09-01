@@ -50,10 +50,10 @@ window.onload = function main()
 	tue.add(Course.create(16*60 + 20, 1*60 + 40, LECTURE,  uel,  iae(''),        unknown     ));
 	tue.add(Course.create(18*60 + 10, 1*60 + 40, SEMINAR,  uel,  nsu(424),       unknown     ));
 	
-	wed.add(Course.create( 9*60 +  0, 1*60 + 40, LECTURE,  gfx,  inp(508),       valeev,     Course.UNABLE));
+	wed.add(Course.create( 9*60 +  0, 1*60 + 40, LECTURE,  gfx,  inp(508),       valeev      ));
 	wed.add(Course.create(10*60 + 50, 1*60 + 40, SEMINAR,  gfx,  inp(508),       hairulin,   Course.UNABLE));
 	
-	thu.add(Course.create(10*60 + 50, 1*60 + 40, LECTURE,  net,  inp(508),       idrisov,    Course.UNABLE));
+	thu.add(Course.create(10*60 + 50, 1*60 + 40, LECTURE,  net,  inp(508),       idrisov     ));
 	thu.add(Course.create(12*60 + 40, 1*60 + 40, SEMINAR,  net,  inp(508),       cheblakov,  Course.UNABLE));
 	thu.add(Course.create(18*60 + 10, 1*60 + 40, SEMINAR,  eng,  nsu(326),       unknown     ));
 	
