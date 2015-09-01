@@ -29,9 +29,11 @@ Course.create = function (start,length,type,name,place,teacher,flicker)
 	course.element.setAttribute('class','course-container');
 	course.innerElement = document.createElement('div');
 	course.innerElement.setAttribute('class','course');
+	/*
 	course.innerElement.href = course.name.link;
 	course.innerElement.onclick = function () { window.open(this.href); };
 	course.innerElement.onmousedown = function (event) { if(event.which == 2) { window.open(this.href, '_blank'); } };
+	*/
 	course.element.appendChild(course.innerElement);
 	
 	course.slider = new Object();
