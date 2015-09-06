@@ -34,14 +34,14 @@ window.onload = function main()
 	    nsu = function (aud) { return Location.create("",aud); },
 	    inp = function (aud) { return Location.create("ИЯФ",aud); },
 	    iae = function (aud) { return Location.create("ИАиЭ",aud); },
-	    mil = Location.create("<a target='_blank' href='http://2gis.ru/novosibirsk/callout/83.100446%2C54.875724%2C17/center/83.094664%2C54.875261/zoom/15'>Военное училище</a>",'');
+	    vki = Location.create("<a target='_blank' href='http://2gis.ru/novosibirsk/query/%D0%92%D0%9A%D0%98/firm/141265769338784/center/83.0581%2C54.845707/zoom/14'>ВКИ</a>",'');
 	
 	var 
 	    LECTURE  = Type.create('Лекция'),
 	    SEMINAR  = Type.create('Семинар'),
 	    PRACTICE = Type.create('Практикум');
 	
-	mon.add(Course.create( 9*60 +  0, 2*60 + 30, LECTURE,  grob, mil,            unknown     ));
+	mon.add(Course.create( 9*60 +  0, 2*60 + 30, LECTURE,  grob, vki,            unknown     ));
 	mon.add(Course.create(14*60 + 15, 0*60 + 45, LECTURE,  econ, nsu('БА'),      unknown     ));
 	mon.add(Course.create(15*60 +  5, 0*60 + 45, SEMINAR,  econ, nsu(''),        unknown     ));
 	mon.add(Course.create(16*60 + 00, 1*60 + 35, SEMINAR,  cph,  nsu('436'),     unknown     ));
@@ -51,10 +51,10 @@ window.onload = function main()
 	tue.add(Course.create(17*60 + 45, 1*60 + 35, SEMINAR,  uel,  nsu(424),       unknown     ));
 	
 	wed.add(Course.create( 9*60 +  0, 1*60 + 35, LECTURE,  gfx,  inp(508),       valeev      ));
-	wed.add(Course.create(10*60 + 45, 1*60 + 35, SEMINAR,  gfx,  inp(508),       hairulin,   Course.UNABLE));
+	wed.add(Course.create(10*60 + 45, 1*60 + 35, SEMINAR,  gfx,  inp(508),       hairulin    ));
 	
 	thu.add(Course.create(10*60 + 45, 1*60 + 35, LECTURE,  net,  inp(508),       idrisov     ));
-	thu.add(Course.create(12*60 + 30, 1*60 + 35, SEMINAR,  net,  inp(508),       cheblakov,  Course.UNABLE));
+	thu.add(Course.create(12*60 + 30, 1*60 + 35, SEMINAR,  net,  inp(508),       cheblakov   ));
 	thu.add(Course.create(17*60 + 45, 1*60 + 35, SEMINAR,  eng,  nsu(326),       unknown     ));
 	
 	fri.add(Course.create(14*60 + 15, 1*60 + 35, SEMINAR,  eng,  nsu(330),       unknown     ));
