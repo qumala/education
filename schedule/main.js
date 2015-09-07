@@ -29,12 +29,13 @@ window.onload = function main()
 	    valeev      = Teacher.create('Валеев Т.Ф.'),
 	    hairulin    = Teacher.create('Хайрулин С.С.'),
 	    sapchenko   = Teacher.create('Сапченко Н.А.'),
-		shatrova    = Teacher.create('Шатрова В.Я.'),
-		redyuk      = Teacher.create('Редюк А.А.'),
-		smirnov     = Teacher.create('Смирнов С.В.'),
-		volodin     = Teacher.create('Володин В.А.'),
-		bloshkin    = Teacher.create('Блошкин А.А.'),
-		unknown     = Teacher.create('');
+	    shatrova    = Teacher.create('Шатрова В.Я.'),
+	    redyuk      = Teacher.create('Редюк А.А.'),
+	    smirnov     = Teacher.create('Смирнов С.В.'),
+	    volodin     = Teacher.create('Володин В.А.'),
+	    bloshkin    = Teacher.create('Блошкин А.А.'),
+	    pivchenko   = Teacher.create('Пивченко А.А.'),
+	    unknown     = Teacher.create('');
 	    
 	var 
 	    nsu = function (aud) { return Location.create("",aud); },
@@ -47,10 +48,10 @@ window.onload = function main()
 	    SEMINAR  = Type.create('Семинар'),
 	    PRACTICE = Type.create('Практикум');
 	
-	mon.add(Course.create( 9*60 +  0, 2*60 + 30, LECTURE,  grob, vki,        unknown     ));
+	mon.add(Course.create( 9*60 +  0, 2*60 + 30, LECTURE,  grob, vki,        pivchenko   ));
 	mon.add(Course.create(14*60 + 15, 0*60 + 45, LECTURE,  econ, nsu('БА'),  shatrova    ));
 	mon.add(Course.create(15*60 +  5, 0*60 + 45, SEMINAR,  econ, nsu(''),    shatrova    ));
-	mon.add(Course.create(16*60 + 00, 1*60 + 35, SEMINAR,  cph,  nsu('436'), redyuk      ));
+	mon.add(Course.create(16*60 + 00, 1*60 + 35, SEMINAR,  cph,  nsu('305'), redyuk      ));
 	
 	tue.add(Course.create( 9*60 +  0, 1*60 + 35, LECTURE,  uel,  iae(''),    volodin     ));
 	tue.add(Course.create(10*60 + 45, 1*60 + 35, SEMINAR,  uel,  iae(''),    bloshkin    ));
