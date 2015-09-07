@@ -119,26 +119,31 @@ h3
 .time-current
 {
 	background-color: #FFFF22;
+	z-index: 2;
 }
 
 .time-next
 {
 	background-color: #DDDDDD;
+	z-index: 2;
 }
 
 .time-previous
 {
 	background-color: #66DD44;
+	z-index: 2;
 }
 
 .time-nearest
 {
 	background-color: #FF4422;
+	z-index: 2;
 }
 
 .time-unable
 {
 	opacity: 0.2;
+	z-index: 1;
 }
 
 .timer-remain
