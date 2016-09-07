@@ -21,8 +21,8 @@ window.onload = function main()
 	    ast  = Subject.create( 'Астрономия','../courses/ast.html',  Subject.COMMON  ),
 	    unix = Subject.create( 'UNIX',      '../courses/unix.html', Subject.SPECIAL ),
 	    shel = Subject.create( 'Shell',     '../courses/unix.html', Subject.SPECIAL ),
-	    net  = Subject.create( 'САПР',      '../courses/sapr.html', Subject.SPECIAL ),
-	    det  = Subject.create( 'СУБД',      '../courses/scdb.html', Subject.SPECIAL ),
+	    net  = Subject.create( 'Сети',      '../courses/sapr.html', Subject.SPECIAL ),
+	    det  = Subject.create( 'Детекторы', '../courses/scdb.html', Subject.SPECIAL ),
 	    phil = Subject.create( 'Философия', '../courses/phil.html', Subject.LIBERAL );
 	    
 	var 
@@ -52,8 +52,8 @@ window.onload = function main()
 	mon.add(Course.create(14*60 + 30, 1*60 + 35, LECTURE,  sbp,  nsu(316),       kozhevnikov ));
 	mon.add(Course.create(16*60 + 20, 1*60 + 35, SEMINAR,  sbp,  nsu(433),       kozhevnikov ));
 	
-	// tue.add(Course.create( 12*60 +  40, 1*60 + 35, LECTURE, ast,  nsu('БА'), surdin     ));
-	tue.add(Course.create(14*60 + 30, 1*60 + 35, LECTURE,  sbp,  inp(324),       kozhevnikov, 0));
+	tue.add(Course.create( 12*60 +  40, 1*60 + 35, LECTURE, ast,  nsu('БА'),     surdin      , -1));
+	tue.add(Course.create(14*60 + 30, 1*60 + 35, LECTURE,  sbp,  inp(324),       kozhevnikov , 0 ));
 	// tue.add(Course.create(14*60 + 30, 1*60 + 35, PRACTICE, sbp,  inp(324),       kozhevnikov ));
 	tue.add(Course.create(16*60 + 20, 1*60 + 35, SEMINAR,  mmp,  nsu(328),       belheeva    ));
 	tue.add(Course.create(18*60 + 10, 1*60 + 35, SEMINAR,  eng,  nsu(5218),      tihomirova  ));
@@ -69,8 +69,8 @@ window.onload = function main()
 	
 	fri.add(Course.create( 9*60 +  0, 1*60 + 35, PRACTICE, det, inp(508),        kurilin     ));
 	fri.add(Course.create(10*60 + 50, 1*60 + 35, SEMINAR,  sbp,  nsu(326),       kozhevnikov ));
-	// fri.add(Course.create( 12*60 +  40, 1*60 + 35, LECTURE, ast,  nsu('БА'), surdin     ));
-	fri.add(Course.create(14*60 + 15, 1*60 + 35, SEMINAR,  phil, nsu(316),       borisov     ));
+	fri.add(Course.create(12*60 + 40, 1*60 + 35, LECTURE, ast,  nsu('БА'),       surdin      , -1));
+	fri.add(Course.create(14*60 + 30, 1*60 + 35, SEMINAR,  phil, nsu(316),       borisov     ));
 	
 	sat.add(Course.create( 9*60 +  0, 1*60 + 35, LECTURE,  phil, nsu('БА'),      tsyplakov   ));
 	sat.add(Course.create(10*60 + 50, 1*60 + 35, LECTURE,  mmp,  nsu('315'),     abasheeva   ));
