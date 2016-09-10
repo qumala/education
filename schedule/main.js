@@ -76,7 +76,7 @@ window.onload = function main()
 	sat.add(Course.create( 9*60 +  0, 1*60 + 35, LECTURE,  phil, nsu('БА'),      tsyplakov   ));
 	sat.add(Course.create(10*60 + 50, 1*60 + 35, LECTURE,  mmp,  nsu('315'),     abasheeva   ));
 	sat.add(Course.create(14*60 + 30, 1*60 + 35, SEMINAR,  mmp,  nsu('322'),     belheeva    ));
-	sat.add(Course.create(16*60 + 20, 1*60 + 35, ASSIGN,  mmp,  nsu('???'),     belheeva    ));
+	sat.add(Course.create(16*60 + 20, 1*60 + 35, ASSIGN,  mmp,  nsu('247'),     belheeva    ));
 	
 	week.add(mon);
 	week.add(tue);
