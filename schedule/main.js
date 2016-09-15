@@ -22,7 +22,7 @@ window.onload = function main()
 	    unix = Subject.create( 'UNIX',      '../courses/unix.html', Subject.SPECIAL ),
 	    shel = Subject.create( 'Shell',     '../courses/unix.html', Subject.SPECIAL ),
 	    net  = Subject.create( 'Сети',      '../courses/sapr.html', Subject.SPECIAL ),
-	    det  = Subject.create( 'Детекторы', '../courses/scdb.html', Subject.SPECIAL ),
+	    det  = Subject.create( 'СРЭЧ', '../courses/scdb.html', Subject.SPECIAL ),
 	    phil = Subject.create( 'Философия', '../courses/phil.html', Subject.LIBERAL );
 	    
 	var 
