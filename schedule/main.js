@@ -38,7 +38,7 @@ window.onload = function main()
 	    tsyplakov   = Teacher.create('Цыплаков'),
 	    abasheeva   = Teacher.create('Абашеева'),
 	    zhulanov    = Teacher.create('Жуланов'),
-	    sosedkin    = Teacher.create('Соседкин');
+	    sosedkin    = Teacher.create('Соседкин'),
 	    tkachenko 	= Teacher.craete('Ткаченко');
 	    
 	var 
