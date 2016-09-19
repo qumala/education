@@ -39,7 +39,7 @@ window.onload = function main()
 	    abasheeva   = Teacher.create('Абашеева'),
 	    zhulanov    = Teacher.create('Жуланов'),
 	    sosedkin    = Teacher.create('Соседкин'),
-	    tkachenko 	= Teacher.craete('Ткаченко');
+	    tkachenko 	= Teacher.create('Ткаченко');
 	    
 	var 
 	    nsu = function (aud) { return Location.create("",aud); },
