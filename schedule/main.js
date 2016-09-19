@@ -56,7 +56,7 @@ window.onload = function main()
 	mon.add(Course.create(18*60 + 10, 1*60 + 35, ASSIGN,  sbp,  nsu(433),       kozhevnikov ));
 	
 	tue.add(Course.create( 12*60 +  40, 1*60 + 35, LECTURE, ast,  nsu('БА'),     surdin      , -1));
-	tue.add(Course.create(14*60 + 30, 1*60 + 35, PRACTICE, sbp,  nsu('т.4213'),  tkachenko   , 0));
+	tue.add(Course.create(14*60 + 30, 1*60 + 35, PRACTICE, sbp,  nsu('т.4213'),  tkachenko   , 1));
 	tue.add(Course.create(14*60 + 30, 1*60 + 35, LECTURE,  sbp,  nsu(324),       kozhevnikov , 0 ));
 	// tue.add(Course.create(14*60 + 30, 1*60 + 35, PRACTICE, sbp,  inp(324),       kozhevnikov ));
 	tue.add(Course.create(16*60 + 20, 1*60 + 35, SEMINAR,  mmp,  nsu(328),       belheeva    ));
