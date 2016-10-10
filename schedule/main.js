@@ -15,20 +15,20 @@ window.onload = function main()
 	    sat = Day.create( 6, 'Суббота'     );
 	
 	var 
-	    fcs  = Subject.create( 'ФКС',        '../courses/fcs.html', Subject.COMMON  ),
-	    oto  = Subject.create( 'ОТО',        '../courses/oto.html', Subject.COMMON  ),
-	    cul  = Subject.create( 'модернизм',  '../courses/cul.html', Subject.LIBERAL ),
+	    fcs  = Subject.create( 'ФКС',        '../courses/eng.html', Subject.COMMON  ),
+	    oto  = Subject.create( 'ОТО',        '../courses/eng.html', Subject.COMMON  ),
+	    cul  = Subject.create( 'модернизм',  '../courses/eng.html', Subject.LIBERAL ),
 	    eng  = Subject.create( 'ИнЯз',       '../courses/eng.html', Subject.LIBERAL ),
-	    pl1  = Subject.create( 'д.г. плазмы','../courses/pl1.html', Subject.SPECIAL ),
-	    clc  = Subject.create( 'д.г. вычей', '../courses/clc.html', Subject.COMMON  ),
-	    pyt  = Subject.create( 'python',     '../courses/pyt.html', Subject.SPECIAL ),
-	    ing  = Subject.create( 'инжекторы',  '../courses/ing.html', Subject.SPECIAL ),
-	    sin  = Subject.create('синхротронное','../courses/sin.html',Subject.SPECIAL ),
-	    pl2  = Subject.create( 'открытые ловушки','../courses/pl2.html', Subject.SPECIAL ),
-	    phi  = Subject.create( 'Философия',  '../courses/phi.html', Subject.LIBERAL ),
-	    dce  = Subject.create( 'народные',  '../courses/dce.html', Subject.LIBERAL ),
-	    d19  = Subject.create( '19 века',  '../courses/d19.html', Subject.LIBERAL ),
-	    d20  = Subject.create( '20 века',  '../courses/d20.html', Subject.LIBERAL );
+	    pl1  = Subject.create( 'д.г. плазмы','../courses/eng.html', Subject.SPECIAL ),
+	    clc  = Subject.create( 'д.г. вычей', '../courses/eng.html', Subject.COMMON  ),
+	    pyt  = Subject.create( 'python',     '../courses/eng.html', Subject.SPECIAL ),
+	    ing  = Subject.create( 'инжекторы',  '../courses/eng.html', Subject.SPECIAL ),
+	    sin  = Subject.create('синхротронное','../courses/eng.html',Subject.SPECIAL ),
+	    pl2  = Subject.create( 'открытые ловушки','../courses/eng.html', Subject.SPECIAL ),
+	    phi  = Subject.create( 'Философия',  '../courses/eng.html', Subject.LIBERAL ),
+	    dce  = Subject.create( 'народные',  '../courses/eng.html', Subject.LIBERAL ),
+	    d19  = Subject.create( '19 века',  '../courses/eng.html', Subject.LIBERAL ),
+	    d20  = Subject.create( '20 века',  '../courses/eng.html', Subject.LIBERAL );
 	    
 	var 
 	    Tfcs = Teacher.create('Подивилов ЕВ'),
@@ -57,7 +57,7 @@ window.onload = function main()
 	
 	mon.add(Course.create(14*60 + 30, 1*60 + 35, LECTURE,  fcs,  nsu(316),       Tfcs ));
 	
-	wed.add(Course.create(16*60 + 20, 1*60 + 35, SEMINAR,  cul, inp(508),       Tcul  ));
+	wed.add(Course.create(16*60 + 20, 1*60 + 35, SEMINAR,  cul, nsu(508),       Tcul  ));
 	
 	thu.add(Course.create( 9*60 +  0, 1*60 + 35, PRACTICE, pl1,  inp(508),       Tpl1 ));
 	//thu.add(Course.create(10*60 + 50, 1*60 + 35, LECTURE,  pl2,  inp(508),       Tpl2 ));
