@@ -52,7 +52,7 @@ window.onload = function main()
 	    LECTURE  = Type.create('Лекция'),
 	    SEMINAR  = Type.create('Семинар'),
 	    PRACTICE = Type.create('Практикум'),
-	    DANSE = Type.create('Танцы'),
+	    DANСE = Type.create('Танцы'),
 	    ASSIGN   = Type.create('Сдача');
 	
 	mon.add(Course.create(14*60 + 30, 1*60 + 35, LECTURE,  fcs,  nsu(316),       Tfcs ));
