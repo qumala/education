@@ -4,6 +4,7 @@ Course = new Object();
 Course.LECTURE  = 0x1;
 Course.SEMINAR  = 0x2;
 Course.PRACTICE = 0x3;
+Course.DANCE = 0x4;
 
 /* Timing state */
 Course.NONE      = 0x0;
