@@ -11,7 +11,7 @@ window.onload = function main()
 	    tue = Day.create( 2, 'Вторник'     ),
 	    wed = Day.create( 3, 'Среда'       ),
 	    thu = Day.create( 4, 'Четверг'     ),
-	    fri = Day.create( 5, 'Пятница'     );
+	    fri = Day.create( 5, 'Пятница'     ),
 	    sat = Day.create( 6, 'Суббота'     );
 	
 	var 
