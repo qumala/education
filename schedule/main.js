@@ -56,26 +56,26 @@ window.onload = function main()
 	    ASSIGN   = Type.create('Сдача');
 	
 	mon.add(Course.create(14*60 + 30, 1*60 + 35, LECTURE,  fcs,  nsu(434),       Tfcs ));
-	mon.add(Course.create(16*60 + 20, 1*60 + 35, ASSIGN,  oto,  nsu(111),       Toto ));
-	
-	wed.add(Course.create(10*60 +  0, 1*60 + 0 , LECTURE,  ing, inp(313),       Ting  ));
+	mon.add(Course.create(18*60 + 10, 1*60 + 35, ASSIGN,  oto,  nsu('у расписания'),       Toto ));
+
+	wed.add(Course.create(10*60 +  0, 1*60 + 0 , LECTURE,  ing, inp(0),       Ting  ));
 	wed.add(Course.create(16*60 + 20, 1*60 + 35, SEMINAR,  cul, nsu(313),       Tcul  ));
 	wed.add(Course.create(18*60 + 10, 1*60 + 35, LECTURE,  pyt, nsu(315),       Tpyt  ));
 	
 	thu.add(Course.create( 9*60 +  0, 1*60 + 35, LECTURE, pl1,  inp('Рютовка'),       Tpl1 ));
 	thu.add(Course.create(10*60 + 50, 1*60 + 35, LECTURE,  pl2,  inp("Рютовка"),       Tpl2 ));
-	thu.add(Course.create(12*60 + 40, 1*60 + 35, PRACTICE,  pyt,  nsu(202),      Tpyt ));
-	thu.add(Course.create(14*60 + 30, 1*60 + 35, LECTURE, oto, nsu(409),        Toto ));
-	thu.add(Course.create(16*60 + 20, 1*60 + 35, SEMINAR, oto, nsu(409),        Toto ));
+	thu.add(Course.create(12*60 + 40, 1*60 + 35, PRACTICE,  pyt,  nsu(2),      Tpyt ));
+	thu.add(Course.create(14*60 + 30, 1*60 + 35, LECTURE, oto, nsu(4),        Toto ));
+	thu.add(Course.create(16*60 + 20, 1*60 + 35, SEMINAR, oto, nsu(4),        Toto ));
 	
-	fri.add(Course.create(10*60 + 50, 1*60 + 35, SEMINAR,  phi,  nsu(326),       Tphi ));
+	fri.add(Course.create(10*60 + 50, 1*60 + 35, SEMINAR,  phi,  nsu(3),       Tphi ));
 	fri.add(Course.create(12*60 + 40, 1*60 + 35, SEMINAR,  eng, nsu(3120),       Teng  ));
-	fri.add(Course.create(14*60 + 30, 1*60 + 35, SEMINAR,  fcs, nsu(316),       Tfcs  ));
-	fri.add(Course.create(19*60 , 2*60 , PRACTICE,  d20, nsu(316),       Tmed     ));
+	fri.add(Course.create(16*60 + 20, 1*60 + 35, SEMINAR,  fcs, nsu(2),       Tfcs  ));
+	fri.add(Course.create(19*60 , 2*60 , PRACTICE,  d20, nsu(0),       Tmed     ));
 	
 	sat.add(Course.create( 14*60 +  30, 1*60 + 35, LECTURE,  phi, nsu('БА'),      Tphi   ));
-	sat.add(Course.create(16*60 + 20, 1*60 + 35, LECTURE,  clc,  nsu('247'),     Tclc    ));
-	sat.add(Course.create(19*60 , 2*60 , PRACTICE,  d20, nsu(316),       Tmed     ));
+	sat.add(Course.create(16*60 + 20, 1*60 + 35, LECTURE,  clc,  nsu(3),     Tclc    ));
+	sat.add(Course.create(19*60 , 2*60 , PRACTICE,  d20, nsu(0),       Tmed     ));
 	
 	week.add(mon);
 	week.add(tue);
