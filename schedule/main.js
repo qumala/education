@@ -52,7 +52,7 @@ window.onload = function main()
 	    LECTURE  = Type.create('Лекция'),
 	    SEMINAR  = Type.create('Семинар'),
 	    PRACTICE = Type.create('Практикум'),
-	    //DANСE = Type.create('Танцы'),
+	    DANСE = Type.create('Танцы'),
 	    ASSIGN   = Type.create('Сдача');
 	
 	mon.add(Course.create(14*60 + 30, 1*60 + 35, LECTURE,  fcs,  nsu(434),       Tfcs ));
@@ -71,7 +71,7 @@ window.onload = function main()
 	fri.add(Course.create(10*60 + 50, 1*60 + 35, SEMINAR,  phi,  nsu(326),       Tphi ));
 	fri.add(Course.create(12*60 + 40, 1*60 + 35, SEMINAR,  eng, nsu(316),       Teng  ));
 	fri.add(Course.create(14*60 + 30, 1*60 + 35, SEMINAR,  fcs, nsu(316),       Tfcs  ));
-	//fri.add(Course.create(19*60 , 2*60 , DANSE,  d20, nsu(316),       Tmed     ));
+	fri.add(Course.create(19*60 , 2*60 , DANSE,  d20, nsu(316),       Tmed     ));
 	
 	sat.add(Course.create( 14*60 +  30, 1*60 + 35, LECTURE,  phi, nsu('БА'),      Tphi   ));
 	sat.add(Course.create(16*60 + 20, 1*60 + 35, LECTURE,  clc,  nsu('247'),     Tclc    ));
