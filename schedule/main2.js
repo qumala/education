@@ -28,10 +28,10 @@ window.onload = function main()
 	    LECTURE  = Type.create('Лекция'),
 	    SEMINAR  = Type.create('Семинар'),
 	    PRACTICE = Type.create('Практикум'),
-	    //DANСE = Type.create('Танцы'),
+	    DANСE = Type.create('Танцы'),
 	    ASSIGN   = Type.create('Сдача');
 	
-	sat.add(Course.create(19*60 , 2*60 , PRACTICE,  d20, loc(0),       Tmed     ));
+	sat.add(Course.create(19*60 , 2*60 , DANСE,  d20, loc(0),       Tmed     ));
 	
 	week.add(mon);
 	week.add(tue);
