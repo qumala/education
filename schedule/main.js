@@ -12,7 +12,8 @@ window.onload = function main()
 	    wed = Day.create( 3, 'Среда'       ),
 	    thu = Day.create( 4, 'Четверг'     ),
 	    fri = Day.create( 5, 'Пятница'     ),
-	    sat = Day.create( 6, 'Суббота'     );
+	    sat = Day.create( 6, 'Суббота'     ),
+	    sun = Day.create( 7, 'Воскресенье' );
 	
 	var 
 	    fcs  = Subject.create( 'ФКС',        '../courses/fcs.html', Subject.COMMON  ),
@@ -76,6 +77,9 @@ window.onload = function main()
 	sat.add(Course.create( 14*60 +  30, 1*60 + 35, LECTURE,  phi, nsu('БА'),      Tphi   ));
 	sat.add(Course.create(16*60 + 20, 1*60 + 35, LECTURE,  clc,  nsu(3),     Tclc    ));
 	sat.add(Course.create(19*60 , 2*60 , PRACTICE,  d20, nsu(0),       Tmed     ));
+
+	sun.add(Course.create(13*60+30,2*60, PRACTICE,  dce,  nsu('за 8'),     Tmed    ));
+	sun.add(Course.create(16*60 , 2*60 , PRACTICE,  d19, nsu('новый СК'),  Tmed    ));
 	
 	week.add(mon);
 	week.add(tue);
@@ -83,6 +87,7 @@ window.onload = function main()
 	week.add(thu);
 	week.add(fri);
 	week.add(sat);
+	week.add(sun);
 	
 	frame.add(week);
 	
