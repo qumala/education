@@ -19,11 +19,10 @@ window.onload = function main()
 	    d20  = Subject.create( '20 века',  '../courses/d20.html', Subject.LIBERAL );
 	    
 	var 
-	    Tmed =  Teacher.create('Ольга Фиалко'),
+	    Tmed =  Teacher.create('Ольга Фиалко');
 	    
 	var 
-	    loc = function (aud) { return Location.create("",aud); },
-	    inp = function (aud) { return Location.create("ИЯФ",aud); };
+	    loc = function (aud) { return Location.create("",aud); };
 	
 	var 
 	    LECTURE  = Type.create('Лекция'),
